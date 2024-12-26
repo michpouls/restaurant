@@ -1,0 +1,106 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+
+    .navLogo {
+        position: absolute;
+        top: 10px;
+        left: 22.5px;
+        cursor: pointer;
+
+        h1 {
+            font-size: 50px;
+        }
+    }
+
+    .openbtn {
+        position: absolute;
+        font-size: 50px;
+        top: 10px;
+        right: 22.5px;
+        cursor: pointer;
+    }
+}
+
+.overlay {
+    width: 0;
+    /* Start with height 0 */
+    height: 100%;
+    /* Cover the full width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0);
+    /* Semi-transparent black */
+    overflow-y: hidden;
+    transition: width 0.5s ease;
+    /* Animate the height */
+
+    &.open {
+        width: 100%;
+        /* Expand to full height */
+    }
+
+    .overlayContent {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+
+        a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: color 0.3s;
+
+            &:hover,
+            &:focus {
+                color: #f1f1f1;
+            }
+        }
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 22.5px;
+        font-size: 50px;
+        text-decoration: none;
+        color: white;
+
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .navBar {
+        .navLogo {
+            top: 40px;
+            left: 22.5px;
+            h1 {
+                font-size: 25px;
+            }
+        }
+
+        .openbtn {
+            top: 30px;
+            right: 22.5px;
+            font-size: 40px;
+        }
+    }
+
+    .overlay {
+        .closebtn {
+            top: 30px;
+            right: 22.5px;
+            font-size: 40px;
+        }
+    }
+
+
+}
